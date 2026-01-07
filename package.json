@@ -1,13 +1,17 @@
 {
   "name": "@micromachine.dev/blob",
-  "module": "index.ts",
   "type": "module",
+  "module": "src/index.ts",
   "scripts": {
+    "build": "bun build src/index.ts --format esm --target node",
     "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt --write"
   },
   "devDependencies": {
-    "@types/bun": "latest",
+    "@cloudflare/workers-types": "^4.20260103.0",
+    "@types/node": "latest",
+    "oxfmt": "^0.23.0",
     "oxlint": "^1.38.0"
   },
   "peerDependencies": {
@@ -15,5 +19,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": "bun run lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.964.0",
+    "@aws-sdk/s3-request-presigner": "^3.965.0"
   }
 }
