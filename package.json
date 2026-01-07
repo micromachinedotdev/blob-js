@@ -1,0 +1,19 @@
+{
+  "name": "@micromachine.dev/blob",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "oxlint": "^1.38.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "bun run lint"
+  }
+}
