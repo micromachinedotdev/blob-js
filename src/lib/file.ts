@@ -17,6 +17,8 @@ export class R2FileReader implements R2File {
   readonly #client: S3Client;
   readonly #range?: { begin?: number; end?: number };
 
+  static list() {}
+
   constructor(path: string, options?: R2Options, range?: { begin?: number; end?: number }) {
     this.name = path;
     this.#options = options || {};
