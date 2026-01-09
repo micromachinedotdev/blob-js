@@ -557,7 +557,7 @@ export class Client {
       "accessKeyId" | "secretAccessKey" | "sessionToken" | "region" | "bucket" | "endpoint"
     >,
   ): Promise<R2ListObjectsResponse> {
-    return list(input, options);
+    return list(input, { ...this.#options, ...options });
   }
 
   /**

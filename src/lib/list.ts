@@ -20,6 +20,13 @@ export async function list(
   const response = await client.send(
     new ListObjectsV2Command({
       Bucket: bucket,
+      Prefix: input?.prefix,
+      ContinuationToken: input?.continuationToken,
+      Delimiter: input?.delimiter,
+      MaxKeys: input?.maxKeys,
+      FetchOwner: input?.fetchOwner,
+      EncodingType: input?.encodingType,
+      StartAfter: input?.startAfter,
     }),
   );
 
